@@ -10,101 +10,91 @@
 
 
 
-            <div class="container d-flex justify-content-center align-items-center vh-100">
-                <div class="card col-md-10 shadow-lg">
-                
-        
-                    <div class="card-body">
-                        <div class="row">
-
-                            <div class="col-md-5">
-                                <h1>hello</h1>
-                            </div>
-
-                            <div class="col-md-7 p-4">
-
-                            <p class="text-center fs-4 fw-bold">SIGN UP</p>
-                            <form onsubmit="return validateForm()">
-
-                            <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Firstname</label>
-                                <input type="text" class="form-control" name="f_name" placeholder="Firstname">
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Lastname</label>
-                                <input type="text" class="form-control" name="l_name" placeholder="Lastname">
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleInputPassword1" class="form-label">Email</label>
-                                <input type="password" class="form-control" name="email" id="exampleInputPassword1" placeholder="Email">
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleInputPassword1" class="form-label">Password</label>
-                                <input type="password" class="form-control" name="password" id="exampleInputPassword1" placeholder="Password">
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="exampleInputPassword1" class="form-label">Confirm Password</label>
-                                <input type="password" class="form-control" name="password" id="exampleInputPassword1" placeholder="Confirm Password">
-                            </div>
-
-                                
-                            <div class="input-group mb-3">
-                            <input type="file" class="form-control" id="inputGroupFile02">
-                            <label class="input-group-text" for="inputGroupFile02">Upload</label>
-                            </div>
-
-
-                            <div class="text-center">        
-                            <button type="button" class="btn btn-primary col-md-9 mx-auto shadow">Submit</button>
-                            </div>
-
-                            <p class="text-body-secondary text-center">
-                            Need an account? <a href="../Pages/login.php" class="text-reset">SIGNIN</a>.
-                            </p>
-                            </div>
-                            </form>
-                            </div>
-
-
-
-
-                        </div>
-
-
+    <div class="container d-flex justify-content-center align-items-center vh-100">
+        <div class="card col-md-10 shadow-lg">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-5">
+                        <h1>hello</h1>
                     </div>
-
-
-
+                    <div class="col-md-7 p-4">
+                        <p class="text-center fs-4 fw-bold">SIGN UP</p>
+                        <form id="signupForm" method="post" action="../functions/apply_employee.php" onsubmit="return validateForm()" enctype="multipart/form-data">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="firstname" class="form-label">Firstname</label>
+                                    <input type="text" class="form-control" name="f_name" id="firstname" placeholder="Firstname" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="lastname" class="form-label">Lastname</label>
+                                    <input type="text" class="form-control" name="l_name" id="lastname" placeholder="Lastname" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" name="email" id="email" placeholder="Email" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="password" class="form-label">Password</label>
+                                    <input type="password" class="form-control" name="password" id="password" placeholder="Password" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="confirmPassword" class="form-label">Confirm Password</label>
+                                    <input type="password" class="form-control" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password" required>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <label class="input-group-text" for="inputGroupFile02">Upload</label>
+                                    <input class="form-control" type="file" name="idPhoto" accept=".pdf" required>
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit" name="submit" class="btn btn-primary col-md-9 mx-auto shadow">Submit</button>
+                                </div>
+                                <p class="text-body-secondary text-center">
+                                    Need an account? <a href="../Pages/login.php" class="text-reset">SIGN IN</a>.
+                                </p>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-
-
             </div>
-
-
-
+        </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script>
-      function validateForm() {
-        var password = document.getElementById("password").value;
-        var confirmPassword = document.getElementById("confirmPassword").value;
-        
-        if (password !== confirmPassword) {
-          alert("Password and Confirm Password do not match.");
-          return false;
+        function validateForm() {
+            var firstName = document.forms["signupForm"]["f_name"].value;
+            var lastName = document.forms["signupForm"]["l_name"].value;
+            var email = document.forms["signupForm"]["email"].value;
+            var password = document.forms["signupForm"]["password"].value;
+            var confirmPassword = document.forms["signupForm"]["confirmPassword"].value;
+            var resume = document.forms["signupForm"]["resume"].value;
+
+            if (firstName.trim() === "" || lastName.trim() === "") {
+                alert("Firstname and Lastname cannot be empty.");
+                return false;
+            }
+
+            var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            if (!email.match(emailRegex)) {
+                alert("Please enter a valid email address.");
+                return false;
+            }
+
+            if (password !== confirmPassword) {
+                alert("Passwords do not match.");
+                return false;
+            }
+
+            var allowedExtensions = /(\.pdf)$/i;
+            if (!allowedExtensions.test(resume)) {
+                alert("Please upload a PDF file.");
+                return false;
+            }
+
+            return true; // Form will submit if all validations pass
         }
-        
-        var form = document.getElementById("signupForm");
-        if (form.checkValidity() === false) {
-          event.preventDefault();
-          event.stopPropagation();
-        }
-        
-        form.classList.add('was-validated');
-        return true;
-      }
     </script>
+
 </body>
+
 </html>

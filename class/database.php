@@ -16,7 +16,7 @@ class Database
     private $connection;
 
     public function __construct( ) {
-        $this->connection = new PDO("mysql:host=$this->dbServername;dbname=u434603824_capstone", $this->dbUsername, $this->dbPassword);
+        $this->connection = new PDO("mysql:host=$this->dbServername;dbname=vrtsystems", $this->dbUsername, $this->dbPassword);
 
        // set the PDO error mode to exception
        $this->connection->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,PDO::FETCH_ASSOC);

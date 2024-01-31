@@ -13,6 +13,26 @@ class Employee
         $this->time = date('H-i-s');
     }
 
+    public function checkEmailIfExist($email){
+        $stmt = $this->database->getConnection()->prepare("SELECT * FROM employee_info WHERE email=?");
+
+         //if execution fail
+        if (!$stmt->execute([$email])) {
+            header("Location: ../Pages/signup.php?scholar=emailExist");
+            exit();
+        }
+
+        //fetch the result
+        $result = $stmt->fetch();
+        
+          //if has result true, else return false
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public function checkData($resume, $employeeData){
 
         if(in_array($resume['fileActualExt'], $resume['allowed'])){
@@ -34,23 +54,26 @@ class Employee
 
     }
 
-    public function registerEmployee(){
+    public function registerEmployee($employeeData, $resume){
         
-        $sql = "INSERT INTO scholars_info (firs_name, last_name, email, password, resume)
+        $sql = "INSERT INTO employee_info (first_name, last_name, email, password, resume)
             VALUES (?,?,?,?,?);";
 
          // prepared statement
         $stmt = $this->database->getConnection()->prepare($sql);
 
+        $hashedpwd = password_hash($employeeData['password'], PASSWORD_DEFAULT);
+
         if (!$stmt->execute([$employeeData['f_name'],
                              $employeeData['l_name'],
                              $employeeData['email'],
-                             $employeeData['password'],
-                             $employeeData['resume']])){
+                             $hashedpwd,
+                             $resume])){
                                 header('Location: ../Pages/signup.php?message=error');
                                 exit();
                              }
         
-        
+        header("Location: ../Pages/login.php?message=success"); 
+        exit();
     }
 }
