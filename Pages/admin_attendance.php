@@ -8,31 +8,33 @@
     <script src="https://kit.fontawesome.com/53a2b7f096.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
+
+
   </head>
   <body>
    
   <div class="container-fluid">
     <div class="row flex-nowrap">
-        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-white shadow-lg">
+        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-white shadow-lg border">
             <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-black min-vh-100">
                 <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-black text-decoration-none">
                     <span class="fs-6 d-none d-sm-inline">VRTSystem Corp.</span>
                 </a>
                 <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
                     <li class="nav-item">
-                        <a href="#" class="nav-link align-middle px-0 text-black">
+                        <a href="../Pages/admin_index.php" class="nav-link align-middle px-0 text-black">
                         <i class="fa-solid fa-table-columns"></i> <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Dashboard</span>
                         </a>
                     </li>
                   
-                    <li>
-                        <a href="#" class="nav-link px-0 align-middle text-black">
+                    <li class="nav-item">
+                        <a href="../Pages/admin_attendance.php" class="nav-link px-0 align-middle text-black ">
                         <i class="fa-solid fa-clipboard-user"></i></i> <span class="ms-1 d-none d-sm-inline">Attendance</span></a>
                     </li>
               
                 
                     <li>
-                        <a href="#" class="nav-link px-0 align-middle text-black">
+                        <a href="../Pages/admin_pending_applicants.php" class="nav-link px-0 align-middle text-black">
                         <i class="fa-solid fa-clock-rotate-left"></i></i> <span class="ms-1 d-none d-sm-inline">Pending Applicants</span> </a>
                     </li>
                 </ul>
@@ -53,31 +55,98 @@
 
   
   
-  <!-- ... (your sidebar code) ... -->
+
+
+
+
+
+
+
 
     <!-- Main Content -->
-    <div class="col py-3" style="background-color: #F5F5F5;">
+
+
+      <!-- Main Content -->
+      <div class="col py-3" style="background-color: #F5F5F5;">
       <div class="container">
-        <table id="myTable" class="display">
+        <!-- Tab Navigation -->
+        <ul class="nav nav-tabs" id="myTabs">
+          <li class="nav-item">
+            <a class="nav-link active" href="#presentTab">List of Present</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#absentTab">List of Absent</a>
+          </li>
+        </ul>
+
+        <!-- Tab Content -->
+        <div class="tab-content">
+          <div class="tab-pane active" id="presentTab">
+          <div class="card border-top-0">
+                <div class="card-body">
+            <table id="myTable" class="table table-striped">
           <thead>
             <tr>
-              <th>Column 1</th>
-              <th>Column 2</th>
+              <th>Name</th>
+              <th>Time In</th>
+              <th>Time Out</th>
+              <th>Status</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Row 1 Data 1</td>
-              <td>Row 1 Data 2</td>
+              <td>Chua, Jerome</td>
+              <td>12:30 AM</td>
+              <td>12:30 AM</td>
+              <td>On Time</td>
             </tr>
             <tr>
-              <td>Row 2 Data 1</td>
-              <td>Row 2 Data 2</td>
+              <td>Dange, Kevin</td>
+              <td>12:30 AM</td>
+              <td>12:30 AM</td>
+              <td>Late</td>
             </tr>
           </tbody>
         </table>
+            </div>
+            </div>
+          </div>
+          <div class="tab-pane" id="absentTab">
+          <div class="card border-top-0">
+  <div class="card-body">
+          <table id="myabsent" class="table table-striped">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Time In</th>
+              <th>Time Out</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Chua, Jerome</td>
+              <td>12:30 AM</td>
+              <td>12:30 AM</td>
+              <td>On Time</td>
+            </tr>
+            <tr>
+              <td>Dange, Kevin</td>
+              <td>12:30 AM</td>
+              <td>12:30 AM</td>
+              <td>Late</td>
+            </tr>
+          </tbody>
+        </table>
+          </div>
+
+        </div>
       </div>
     </div>
+
+    
+
+  
 
     <!-- Include DataTables JavaScript -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -87,6 +156,16 @@
       $(document).ready(function () {
         $('#myTable').DataTable();
       });
+
+      $(document).ready(function () {
+        $('#myabsent').DataTable();
+      });
+
+         $('#myTabs a').on('click', function (e) {
+          e.preventDefault();
+          $(this).tab('show');
+        });
+    
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>

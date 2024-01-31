@@ -5,7 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Login Form</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  </head>
+    <script src="https://kit.fontawesome.com/53a2b7f096.js" crossorigin="anonymous"></script>  
+</head>
+  <style>
+    body{
+        background-image: url('../Pictures/2314983.jpg');
+        background-size: cover; /* This ensures the image covers the entire background */
+        background-repeat: no-repeat; /* Prevents the image from repeating */
+        background-attachment: fixed; /* Keeps the background fixed as you scroll */
+        background-color: rgba(0, 0, 0.5, 0.5);
+            }
+
+
+
+    </style>
   <body>
 
 
@@ -18,7 +31,7 @@
                         <div class="row">
 
                             <div class="col-md-5">
-                                <h1>hello</h1>
+                                <img src="../Pictures/63773689c5405621be6336d5e91b5b61.jpg" class="img-fluid">
                             </div>
 
                             <div class="col-md-7 p-4">
@@ -39,9 +52,15 @@
                             <button type="button" class="btn btn-primary col-md-9 mx-auto">Submit</button>
                             </div>
 
-                            <p class="text-body-secondary text-center">
-                            Need an account? <a href="../Pages/signup.php" class="text-reset">SIGNUP</a>.
-                            </p>
+                            
+
+                            <small class="text-body-secondary text-center ">
+                                    <center> Need an account? <a href="../Pages/signup.php" class="text-reset">Sign-Up</a>.</center>
+                            </small>
+
+                            <div class="d-flex justify-content-center  text-center gap-2 mt-1">
+                            <i class="fa-brands fa-facebook fs-5 text-primary" ></i> <i class="fa-brands fa-instagram fs-5"></i> <i class="fa-solid fa-envelope fs-5"></i>
+                            </div>
                         
                             </form>
                             </div>

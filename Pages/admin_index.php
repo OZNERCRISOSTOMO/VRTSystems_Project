@@ -16,26 +16,26 @@
 
         <div class="container-fluid">
     <div class="row flex-nowrap">
-        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-white shadow-lg">
+        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-white shadow-lg border">
             <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-black min-vh-100">
                 <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-black text-decoration-none">
                     <span class="fs-6 d-none d-sm-inline">VRTSystem Corp.</span>
                 </a>
                 <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
                     <li class="nav-item">
-                        <a href="#" class="nav-link align-middle px-0 text-black">
+                        <a href="../Pages/admin_index.php" class="nav-link align-middle px-0 text-black">
                         <i class="fa-solid fa-table-columns"></i> <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Dashboard</span>
                         </a>
                     </li>
                   
                     <li>
-                        <a href="#" class="nav-link px-0 align-middle text-black">
+                        <a href="../Pages/admin_attendance.php" class="nav-link px-0 align-middle text-black">
                         <i class="fa-solid fa-clipboard-user"></i></i> <span class="ms-1 d-none d-sm-inline">Attendance</span></a>
                     </li>
               
                 
                     <li>
-                        <a href="#" class="nav-link px-0 align-middle text-black">
+                        <a href="../Pages/admin_pending_applicants.php" class="nav-link px-0 align-middle text-black">
                         <i class="fa-solid fa-clock-rotate-left"></i></i> <span class="ms-1 d-none d-sm-inline">Pending Applicants</span> </a>
                     </li>
                 </ul>
@@ -47,7 +47,7 @@
                     </a>
                     <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
 
-                        <li><a class="dropdown-item" href="#">Sign out</a></li>
+                        <li><a class="dropdown-item" href="../Pages/login.php">Sign out</a></li>
                     </ul>
                 </div>
             </div>
