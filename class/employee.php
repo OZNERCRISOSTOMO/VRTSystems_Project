@@ -56,8 +56,8 @@ class Employee
 
     public function registerEmployee($employeeData, $resume){
         
-        $sql = "INSERT INTO employee_info (first_name, last_name, email, password, resume)
-            VALUES (?,?,?,?,?);";
+        $sql = "INSERT INTO employee_info (first_name, last_name, email, password, resume, verification_token)
+            VALUES (?,?,?,?,?,?);";
 
          // prepared statement
         $stmt = $this->database->getConnection()->prepare($sql);
@@ -68,12 +68,31 @@ class Employee
                              $employeeData['l_name'],
                              $employeeData['email'],
                              $hashedpwd,
-                             $resume])){
+                             $resume,
+                             $employeeData['token']])){
                                 header('Location: ../Pages/signup.php?message=error');
                                 exit();
                              }
         
         header("Location: ../Pages/login.php?message=success"); 
         exit();
+    }
+
+    public function verification($token){
+        $stmt = "SELECT id FROM users WHERE verification_token = '?'";
+
+        if (!$stmt->execute([$token])) {
+            header("Location: ../Pages/signup.php?scholar=emailExist");
+            exit();
+        }
+
+        $result = $stmt->fetch();
+        
+          //if has result true, else return false
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

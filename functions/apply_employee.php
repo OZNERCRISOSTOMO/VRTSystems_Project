@@ -6,12 +6,13 @@ if(isset($_POST['submit'])){
 
     $database = new Database();
     $employee = new Employee($database);
-
+    $verificationToken = md5(uniqid(rand(), true));
     $employeeData = array(
         'f_name' => trim($_POST['f_name']),
         'l_name' => trim($_POST['l_name']),
         'email' => trim($_POST['email']),
         'password' => trim($_POST['password']),
+        'token' => $verificationToken
     );
 
     $fileData = array(
@@ -39,7 +40,17 @@ if(isset($_POST['submit'])){
        exit();
     }
 
+
     if ($fileData['fileError'] === 0){
+        $subject = "Email Verification";
+        $message = "Click the following link to verify your email:\n\n";
+        $message .= "http://localhost/VRTSYSTEMS_PROJECT/Functions/verify_email.php?token=$verificationToken";
+    
+        if ($database->sendEmail($employeeData['email'], $subject, $message)) {
+            header('Location: ../Pages/signup.php');
+        } else {
+            echo "Error sending email. Please try again later.";
+        }
         $employee->checkData($resumeData ,$employeeData);
     } else {
         echo "There was an error while uploading the file";
