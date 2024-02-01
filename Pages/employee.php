@@ -34,10 +34,7 @@
                     </li>
               
                 
-                    <li>
-                        <a href="../Pages/admin_pending_applicants.php" class="nav-link px-0 align-middle text-black">
-                        <i class="fa-solid fa-clock-rotate-left"></i></i> <span class="ms-1 d-none d-sm-inline">Pending Applicants</span> </a>
-                    </li>
+                 
                 </ul>
                 <hr>
                 <div class="dropdown pb-4">
@@ -61,7 +58,7 @@
             <div class="container">
                 <div class="row">
 
-                <div class="col-sm-3 mb-3 mb-sm-0">
+                <div class="col-sm-6 mb-3 mb-sm-0">
                     <div class="card border-0 border-bottom  border-success border-5 shadow">
                     <div class="card-body">
                         <small class="card-title">Present</small>
@@ -71,7 +68,7 @@
                     </div>
                 </div>
 
-                <div class="col-sm-3 mb-3 mb-sm-0 ">
+                <div class="col-sm-6 mb-3 mb-sm-0 ">
                 <div class="card border-0 border-bottom  border-danger border-5 shadow">
                 <div class="card-body">
                     <small class="card-title">Absent</small>
@@ -82,27 +79,7 @@
 
     
 
-        <div class="col-sm-3 mb-3 mb-sm-0">
-                    <div class="card border-0 border-bottom  border-primary border-5 shadow">
-                    <div class="card-body">
-                        <small class="card-title">Employees</small>
-                       
-
-                    </div>
-                    </div>
-                </div>
-
-
-                <div class="col-sm-3 mb-3 mb-sm-0">
-            <div class="card border-0 border-bottom  border-secondary border-5 shadow">
-            <div class="card-body">
-                <small class="card-title">Pending Applicants</small>
-
-            
-            </div>
-            </div>
-        </div>
-
+    
 
 
                 </div>

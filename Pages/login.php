@@ -9,7 +9,9 @@
 </head>
   <style>
     body{
-        background-image: url('../Pictures/2314983.jpg');
+        background-image: 
+    url('../Pictures/2314983.jpg'), /* Image URL */
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
         background-size: cover; /* This ensures the image covers the entire background */
         background-repeat: no-repeat; /* Prevents the image from repeating */
         background-attachment: fixed; /* Keeps the background fixed as you scroll */
