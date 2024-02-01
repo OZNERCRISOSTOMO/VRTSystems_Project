@@ -43,7 +43,7 @@
                   </ul>
                   <span class="navbar-text ">
                     <a href="../Pages/signup.php" class="text-white text-decoration-none"><small>Apply for Applicant</small></a>
-        <a href="../Pages/login.php"button class="btn btn-primary btn-sm ms-2 ">Sign In</button></a>
+        <a href="../Pages/login.php" button class="btn btn-primary btn-sm ms-2 ">Sign In</button></a>
                   </span>
                 </div>
               </div>
