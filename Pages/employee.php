@@ -61,18 +61,33 @@
                 <div class="col-sm-6 mb-3 mb-sm-0">
                     <div class="card border-0 border-bottom  border-success border-5 shadow">
                     <div class="card-body">
-                        <small class="card-title">Present</small>
-                       
+                        <div class="row">
+                            <div class="col-10">
+                    <i class="fa-solid fa-circle-info text-success fs-4 me-2"></i> <small class="card-title">Present</small>
+                        </div>
+                        <div class="col-2">
+                         <small class="card-text text-end">31</small>
+                        </div>
+                        </div>
 
                     </div>
                     </div>
                 </div>
 
-                <div class="col-sm-6 mb-3 mb-sm-0 ">
+                <div class="col-sm-6 mb-3  ">
                 <div class="card border-0 border-bottom  border-danger border-5 shadow">
                 <div class="card-body">
-                    <small class="card-title">Absent</small>
-             
+                <div class="row">
+                            <div class="col-10">
+                    <i class="fa-solid fa-circle-info text-danger fs-4 me-2"></i> <small class="card-title">Absent</small>
+                        </div>
+                        <div class="col-2">
+                         <small class="card-text text-end">31</small>
+                        </div>
+                        </div>
+            
+                      
+                  
                 </div>
                 </div>
             </div>
