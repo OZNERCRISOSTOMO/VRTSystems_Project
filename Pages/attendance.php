@@ -15,25 +15,23 @@
             </div>
             <div class="card-body">
 
-            <form>
+            <form method="post" action="../functions/attendance.php">
             <div class="form-floating mb-3">
-                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <input type="email" class="form-control" name="email" id="floatingInput" placeholder="name@example.com">
                 <label for="floatingInput">Email address</label>
                 </div>
                 <div class="form-floating">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                <input type="password" class="form-control" name="pass" id="floatingPassword" placeholder="Password">
                 <label for="floatingPassword">Password</label>
                 </div>
-              
-                </form>
 
 
             </div>
             <div class="card-footer text-body-secondary text-center">
-              <button class="btn btn-primary btn-sm w-50"> Attendance </button>  
+              <button type="submit" name="submit"class="btn btn-primary btn-sm w-50"> Attendance </button>  
             </div>
             </div>
-
+            </form>
         </div>
 
 
