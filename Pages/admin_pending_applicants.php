@@ -1,3 +1,20 @@
+<?php
+
+session_start();
+if(isset($_SESSION['id']) && $_SESSION['user_type'] === 3){
+  require '../class/database.php';
+  require '../class/employee.php';
+
+  $database = new Database();
+  $employee = new Employee($database);
+
+  $id = $_SESSION['id'];
+
+  $employeeData = $employee->employee_info($id); 
+}else{
+  header('Location: login.php');
+}
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -53,7 +70,7 @@
                     </a>
                     <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
 
-                        <li><a class="dropdown-item" href="../Pages/login.php">Sign out</a></li>
+                        <li><a class="dropdown-item" href="../functions/logout.php">Sign out</a></li>
                     </ul>
                 </div>
             </div>
