@@ -5,19 +5,23 @@
     <head>
      
       <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="icon" type="image/png" href="../Pictures/logo.png"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
         <title>About Us</title>
 
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
         <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
         <link rel="stylesheet" href="../assets1/css/1.css" />
-       </head>
+       
+    </head>
        <header>   
        
 
-       <body>
-       <div class="loader"></div>
+       
+       <div class="loader">
+
+       </div>
     
             <nav class="navbar navbar-expand-lg bg-secondary fixed-top">
               <div class="container">
@@ -38,8 +42,8 @@
                     </li>
                   </ul>
                   <span class="navbar-text ">
-                    <a href="" class="text-white text-decoration-none"><small>Apply for Applicant</small></a>
-                    <button class="btn btn-primary btn-sm ms-2 ">Sign In</button>
+                    <a href="../Pages/signup.php" class="text-white text-decoration-none"><small>Apply for Applicant</small></a>
+        <a href="../Pages/login.php"button class="btn btn-primary btn-sm ms-2 ">Sign In</button></a>
                   </span>
                 </div>
               </div>

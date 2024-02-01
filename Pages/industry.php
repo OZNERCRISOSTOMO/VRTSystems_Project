@@ -5,8 +5,9 @@
     <head>
      
       <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="icon" type="image/png" href="../Pictures/logo.png"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
         <title>Industry Partners</title>
 
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -14,48 +15,11 @@
         <link rel="stylesheet" href="../assets1/css/1.css" />
 
        </head>
-        <style>
-            .loader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #333333;
-  transition: opacity 0.75s, visibility 0.75s;
-}
+        
+       
+       <div class="loader">
 
-.loader--hidden {
-  opacity: 0;
-  visibility: hidden;
-}
-
-.loader::after {
-  content: "";
-  width: 75px;
-  height: 75px;
-  border: 15px solid #dddddd;
-  border-top-color: #009578;
-  border-radius: 50%;
-  animation: loading 0.75s ease infinite;
-}
-
-@keyframes loading {
-  from {
-    transform: rotate(0turn);
-  }
-  to {
-    transform: rotate(1turn);
-  }
-}
-
-        </style>
-
-       <body>
-       <div class="loader"></div>
+       </div>
         <header class="mb-5">
     
           <nav class="navbar navbar-expand-lg bg-secondary fixed-top">
@@ -77,8 +41,8 @@
                   </li>
                 </ul>
                 <span class="navbar-text ">
-                  <a href="" class="text-white text-decoration-none"><small>Apply for Applicant</small></a>
-                  <button class="btn btn-primary btn-sm ms-2 ">Sign In</button>
+                  <a href="../Pages/signup.php" class="text-white text-decoration-none"><small>Apply for Applicant</small></a>
+        <a href="../Pages/login.php"button class="btn btn-primary btn-sm ms-2 ">Sign In</button></a>
                 </span>
               </div>
             </div>
