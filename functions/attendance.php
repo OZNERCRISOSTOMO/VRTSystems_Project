@@ -5,8 +5,9 @@ if(isset($_POST['submit'])){
 
     $timezone = 'Asia/Manila';
 	date_default_timezone_set($timezone);
-    $date = date('Y-m-d');
-    $time = date('H-i');
+
+    $date1 = date("Y-m-d");
+    $current_time = date("H:i:s");
 
     $database = new Database();
 
@@ -29,21 +30,23 @@ if(isset($_POST['submit'])){
     }
 
     $stmtCheck = $database->getConnection()->prepare("SELECT * FROM attendance WHERE employee_id = :id AND date = :date");
-    $stmtCheck->execute(['id' => $employeeId, 'date' => $date]);
-    $employeeCheck = $stmt->fetch();
+    $stmtCheck->execute(['id' => $employeeId, 'date' => $date1]);
+    $employeeCheck = $stmtCheck->fetch();
     $count = $employeeCheck ? '1':'0';
-
-    if($count == 1){
+    if($count == '1'){
         $attendanceId = $employeeCheck['id'];
         $stmtUpdateTime_out = $database->getConnection()->prepare("UPDATE attendance SET time_out = ? WHERE id = ?");
-        $stmtUpdateTime_out->execute([$time, $attendanceId]);
+        $stmtUpdateTime_out->execute([$current_time, $attendanceId]);
 
-
+        header('Location: ../Pages/attendance.php?message=timeOut');
     }else{
         $logstatus = ('08:30:00' > $time)? 'Ontime':'Late';
 
         $stmtInsert = $database->getConnection()->prepare("INSERT INTO attendance (employee_id, first_name, last_name, time_in, status, date) VALUES (?,?,?,?,?,?)");
-        $stmtInsert->execute([$employeeId, $employeeInfo['first_name'], $employeeInfo['last_name'], $time, $logstatus, $date]);
+        $stmtInsert->execute([$employeeId, $employeeInfo['first_name'], $employeeInfo['last_name'], $current_time, $logstatus, $date1]);
+        
+        header('Location: ../Pages/attendance.php?message=timeIn');
+
     }
 
 }

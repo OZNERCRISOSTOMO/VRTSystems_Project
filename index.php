@@ -5,14 +5,14 @@
   <head>
 
     <meta charset="utf-8">
-    <link rel="icon" type="image/png" href="../Pictures/logo.png"/>
+    <link rel="icon" type="image/png" href="Pictures/logo.png"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <title>Landing Page</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="stylesheet" href="../assets1/css/1.css" />
+    <link rel="stylesheet" href="assets1/css/1.css" />
 
   </head>
  
@@ -29,25 +29,25 @@
        </div>
 <nav class="navbar navbar-expand-lg bg-secondary fixed-top">
   <div class="container">
-    <a class="navbar-brand" href="#"><img src="../Pictures/1.png" style=width:100px;height:30px;></a>
+    <a class="navbar-brand" href="#"><img src="Pictures/1.png" style=width:100px;height:30px;></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item ">
-          <a class="nav-link active text-white" aria-current="page" href="Landing_Page.php">Home</a>
+          <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
         </li>
         <li class="nav-item ">
-          <a class="nav-link text-white" href="about-us.php">About Us</a>
+          <a class="nav-link text-white" href="Pages/about-us.php">About Us</a>
         </li>
         <li class="nav-item ">
-          <a class="nav-link text-white" href="industry.php">industry Partners</a>
+          <a class="nav-link text-white" href="Pages/industry.php">industry Partners</a>
         </li>
       </ul>
       <span class="navbar-text ">
-        <a href="../Pages/signup.php" class="text-white text-decoration-none"><small>Apply for Applicant</small></a>
-        <a href="../Pages/login.php" button class="btn btn-primary btn-sm ms-2 ">Sign In</button></a>
+        <a href="Pages/signup.php" class="text-white text-decoration-none" style="margin:10px;"><small>Apply for Applicant</small></a>
+        <a href="Pages/login.php" class="text-white text-decoration-none" style="margin:10px;"><small>Sign In</small></a>
       </span>
     </div>
   </div>
@@ -59,13 +59,13 @@
   <div id="carouselExampleInterval" class="carousel slide mt-5" data-bs-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active" data-bs-interval="1000s">
-              <img src="../Pictures/2.jpg" class="d-block w-100" alt="...">
+              <img src="Pictures/2.jpg" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item" data-bs-interval="500s">
-              <img src="../Pictures/3.jpg" class="d-block w-100" alt="...">
+              <img src="Pictures/3.jpg" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-              <img src="../Pictures/4.jpg" class="d-block w-100" alt="...">
+              <img src="Pictures/4.jpg" class="d-block w-100" alt="...">
             </div>
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
@@ -139,7 +139,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
  
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <script src="../assets1/js/1.js"></script>
+    <script src="assets1/js/1.js"></script>
 
   </body>
 </html>

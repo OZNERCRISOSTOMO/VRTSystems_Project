@@ -14,7 +14,8 @@ if(isset($_SESSION['id']) && $_SESSION['user_type'] === 3){
 
   $employeeCount = $employee->getEmployeeCount();
 
-  $pendingCount = $employee->
+  $employeeApplicants = $employee->getApplicantsCount();
+
 }else{
   header('Location: login.php');
 }
@@ -40,7 +41,7 @@ if(isset($_SESSION['id']) && $_SESSION['user_type'] === 3){
     <div class="row flex-nowrap">
         <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-white shadow-lg border">
             <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-black min-vh-100">
-                <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-black text-decoration-none">
+                <a href="#" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-black text-decoration-none">
                 <img src="../Pictures/logo.png" class="me-1" style="width:35px;height:35px; font-weight:bold;">BOLTIMZER
                 </a>
                 <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
@@ -146,7 +147,7 @@ if(isset($_SESSION['id']) && $_SESSION['user_type'] === 3){
                     <i class="fa-solid fa-circle-info text-secondary fs-4 me-2"></i> <small class="card-title">Pending Applicants</small>
                         </div>
                         <div class="col-2">
-                         <small class="card-text text-end">31</small>
+                         <small class="card-text text-end"><?php echo $employeeApplicants; ?></small>
                         </div>
                         </div>
             

@@ -12,6 +12,15 @@ class Employee
         $this->date = date('Y-m-d');
         $this->time = date('H-i-s');
     }
+    public function getApplicants(){
+        $stmt = $this->database->getConnection()->query("SELECT * FROM employee_info WHERE status = 0")->fetchAll();
+        return $stmt;
+        exit();
+    }
+    public function getApplicantsCount() {
+        $employee = $this->getApplicants();
+        return count($employee);
+    }
     public function getEmployee(){
         $stmt = $this->database->getConnection()->query("SELECT * FROM employee_info WHERE is_verified = 1")->fetchAll();
         return $stmt;

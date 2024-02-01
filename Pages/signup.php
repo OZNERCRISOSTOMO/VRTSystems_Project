@@ -31,7 +31,7 @@
 
         <div class="card col-md-10 shadow-lg">
             <div class="card-body">
-            <span><a href="../Pages/login.php" class="text-black"><i class="fa-solid fa-arrow-left-long ms-2"></i></a></span>
+            <span><a href="../index.php" class="text-black"><i class="fa-solid fa-arrow-left-long ms-2"></i></a></span>
                 <div class="row">
                 
                     <div class="col-md-11 mx-auto">

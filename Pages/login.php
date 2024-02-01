@@ -31,10 +31,12 @@
 
 
             <div class="container d-flex justify-content-center align-items-center vh-100">
+
                 <div class="card col-md-10 shadow-lg">
                 
         
                     <div class="card-body">
+                    <span><a href="../index.php" class="text-black"><i class="fa-solid fa-arrow-left-long ms-2"></i></a></span>
                         <div class="row">
 
                             <div class="col-md-5">
