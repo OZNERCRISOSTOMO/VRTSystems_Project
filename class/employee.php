@@ -133,7 +133,7 @@ class Employee
     public function registerEmployee($employeeData, $resume){
         
         $sql = "INSERT INTO employee_info (first_name, last_name, email, password, resume, verification_token, user_type)
-            VALUES (?,?,?,?,?,?);";
+            VALUES (?,?,?,?,?,?,?);";
 
          // prepared statement
         $stmt = $this->database->getConnection()->prepare($sql);
