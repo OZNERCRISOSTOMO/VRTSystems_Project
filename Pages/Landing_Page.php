@@ -3,13 +3,22 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <link rel="icon" type="image/png" href="../Pictures/logo.png"/>
+    <title>Landing Page</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="../assets1/css/1.css" />
   </head>
-  <body>
+ 
+
+  </head>
+
 
 <header>
+
+
+       <body>
+       <div class="loader"></div>
 <nav class="navbar navbar-expand-lg bg-secondary fixed-top">
   <div class="container">
     <a class="navbar-brand" href="#"><img src="../Pictures/1.png" style=width:100px;height:30px;></a>
@@ -19,18 +28,18 @@
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item ">
-          <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
+          <a class="nav-link active text-white" aria-current="page" href="Landing_Page.php">Home</a>
         </li>
         <li class="nav-item ">
-          <a class="nav-link text-white" href="#">Features</a>
+          <a class="nav-link text-white" href="about-us.php">About Us</a>
         </li>
         <li class="nav-item ">
-          <a class="nav-link text-white" href="#">Pricing</a>
+          <a class="nav-link text-white" href="industry.php">industry Partners</a>
         </li>
       </ul>
       <span class="navbar-text ">
-        <a href="" class="text-white text-decoration-none"><small>Apply for Applicant</small></a>
-        <button class="btn btn-primary btn-sm ms-2 ">Sign In</button>
+        <a href="../Pages/signup.php" class="text-white text-decoration-none"><small>Apply for Applicant</small></a>
+        <a href="../Pages/login.php"button class="btn btn-primary btn-sm ms-2 ">Sign In</button></a>
       </span>
     </div>
   </div>
@@ -111,6 +120,7 @@
   </div>
 </nav>
 
+
 </footer>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
@@ -121,5 +131,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
  
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="../assets1/js/1.js"></script>
+
   </body>
 </html>
