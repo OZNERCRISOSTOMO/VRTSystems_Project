@@ -132,7 +132,7 @@ class Employee
 
     public function registerEmployee($employeeData, $resume){
         
-        $sql = "INSERT INTO employee_info (first_name, last_name, email, password, resume, verification_token)
+        $sql = "INSERT INTO employee_info (first_name, last_name, email, password, resume, verification_token, user_type)
             VALUES (?,?,?,?,?,?);";
 
          // prepared statement
@@ -145,7 +145,8 @@ class Employee
                              $employeeData['email'],
                              $hashedpwd,
                              $resume,
-                             $employeeData['token']])){
+                             $employeeData['token'],
+                             1])){
                                 header('Location: ../Pages/signup.php?message=error');
                                 exit();
                              }
