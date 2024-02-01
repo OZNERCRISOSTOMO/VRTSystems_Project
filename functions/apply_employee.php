@@ -44,7 +44,7 @@ if(isset($_POST['submit'])){
     if ($fileData['fileError'] === 0){
         $subject = "Email Verification";
         $message = "Click the following link to verify your email:\n\n";
-        $message .= "http://localhost/VRTSYSTEMS_PROJECT/Functions/verify_email.php?token=$verificationToken";
+        $message .= "localhost/VRTSYSTEMS_PROJECT/functions/verify_email.php?token=$verificationToken";
     
         if ($database->sendEmail($employeeData['email'], $subject, $message)) {
             header('Location: ../Pages/signup.php');

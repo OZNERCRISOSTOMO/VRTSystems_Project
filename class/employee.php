@@ -12,7 +12,22 @@ class Employee
         $this->date = date('Y-m-d');
         $this->time = date('H-i-s');
     }
+    public function code($token){
+        $stmt = $this->database->getConnection()->prepare("SELECT id FROM employee_info WHERE verification_token = ?");
 
+        if(!$stmt->execute([$token])){
+            header("Location: ../Pages/signup.php?scholar=emailExist");
+            exit();
+        }
+
+        $result = $stmt->fetch();
+
+        if ($result) {
+            return $result;
+        } else {
+            return false;
+        }
+    }
     public function checkEmailIfExist($email){
         $stmt = $this->database->getConnection()->prepare("SELECT * FROM employee_info WHERE email=?");
 
@@ -76,23 +91,5 @@ class Employee
         
         header("Location: ../Pages/login.php?message=success"); 
         exit();
-    }
-
-    public function verification($token){
-        $stmt = "SELECT id FROM users WHERE verification_token = '?'";
-
-        if (!$stmt->execute([$token])) {
-            header("Location: ../Pages/signup.php?scholar=emailExist");
-            exit();
-        }
-
-        $result = $stmt->fetch();
-        
-          //if has result true, else return false
-        if ($result) {
-            return true;
-        } else {
-            return false;
-        }
     }
 }

@@ -7,19 +7,19 @@ $employee = new Employee($database);
 
 $token = $_GET["token"];
 
-$id = $employee->verification($token);
+$data = $employee->code($token);
+$id = $data['id'];
+$num = count($data);
 
-if (mysqli_num_rows($id) == 1) {
-    $updateQuery = $database->getConnection()->prepare("UPDATE employee_info SET is_verified = 1, verification_token = NULL WHERE id = :id");
+if ($num == 1) {
+    $stmt = $database->getConnection()->prepare("UPDATE employee_info SET is_verified = 1, verification_token = NULL WHERE id = :id");
 
-    if (!$updateQuery->execute(['id' => $id])) {
+    if (!$stmt->execute(['id' => $id])) {
         echo "Error";
     } else {
-        echo "Email verification successful! You can now log in.";
+        header('Location: ../Pages/login.php?message=successfullyVerified');
     }
 } else {
     echo "Invalid or expired verification token. Please try again.";
 }
-
-mysqli_close($conn);
 ?>
