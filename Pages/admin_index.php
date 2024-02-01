@@ -101,7 +101,7 @@ if(isset($_SESSION['id']) && $_SESSION['user_type'] === 3){
                 <div class="card-body">
                 <div class="row">
                             <div class="col-10">
-                    <i class="fa-solid fa-circle-info text-success fs-4 me-2"></i> <small class="card-title">Present</small>
+                    <i class="fa-solid fa-circle-info text-success fs-4 me-2"></i> <small class="card-title">Absent</small>
                         </div>
                         <div class="col-2">
                          <small class="card-text text-end">31</small>
@@ -118,10 +118,10 @@ if(isset($_SESSION['id']) && $_SESSION['user_type'] === 3){
                     <div class="card-body">
                     <div class="row">
                             <div class="col-10">
-                    <i class="fa-solid fa-circle-info text-success fs-4 me-2"></i> <small class="card-title">Present</small>
+                    <i class="fa-solid fa-circle-info text-success fs-4 me-2"></i> <small class="card-title">Employee</small>
                         </div>
                         <div class="col-2">
-                         <small class="card-text text-end">31</small>
+                         <small class="card-text text-end"><?php echo $employeeCount; ?></small>
                         </div>
                         </div>
 
@@ -135,7 +135,7 @@ if(isset($_SESSION['id']) && $_SESSION['user_type'] === 3){
             <div class="card-body">
             <div class="row">
                             <div class="col-10">
-                    <i class="fa-solid fa-circle-info text-success fs-4 me-2"></i> <small class="card-title">Present</small>
+                    <i class="fa-solid fa-circle-info text-success fs-4 me-2"></i> <small class="card-title">Pending Applicants</small>
                         </div>
                         <div class="col-2">
                          <small class="card-text text-end">31</small>
