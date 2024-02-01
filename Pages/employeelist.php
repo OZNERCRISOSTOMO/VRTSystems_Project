@@ -13,17 +13,19 @@ if(isset($_SESSION['id']) && $_SESSION['user_type'] === 3){
   $employeeData = $employee->employee_info($id);
 
   $employeeCount = $employee->getEmployeeCount();
-
-  $pendingCount = $employee->
 }else{
   header('Location: login.php');
 }
+
+
+ $list = $database->getConnection()->query("SELECT * FROM employee_info WHERE status= 1")->fetchAll();
+
+
 ?>
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <link rel="icon" type="image/png" href="../Pictures/logo.png"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Admin dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -54,13 +56,13 @@ if(isset($_SESSION['id']) && $_SESSION['user_type'] === 3){
                         <a href="../Pages/admin_attendance.php" class="nav-link px-0 align-middle text-black">
                         <i class="fa-solid fa-clipboard-user"></i></i> <span class="ms-1 d-none d-sm-inline">Attendance</span></a>
                     </li>
-
+              
+                        
                     <li>
                         <a href="../Pages/employeelist.php" class="nav-link px-0 align-middle text-black">
                         <i class="fa-solid fa-user"></i></i> <span class="ms-1 d-none d-sm-inline">Employee List</span> </a>
                     </li>
 
-                
                     <li>
                         <a href="../Pages/admin_pending_applicants.php" class="nav-link px-0 align-middle text-black">
                         <i class="fa-solid fa-clock-rotate-left"></i></i> <span class="ms-1 d-none d-sm-inline">Pending Applicants</span> </a>
@@ -86,80 +88,29 @@ if(isset($_SESSION['id']) && $_SESSION['user_type'] === 3){
         <!-- Main Nav--->
         <div class="col py-3" style="background-color: #F5F5F5;">
             <div class="container">
-                <div class="row">
-
-                <div class="col-sm-3 mb-3 mb-sm-0">
-                    <div class="card border-0 border-bottom  border-success border-5 shadow">
+                <div class="card">
                     <div class="card-body">
-                    <div class="row">
-                            <div class="col-10">
-                    <i class="fa-solid fa-circle-info text-success fs-4 me-2"></i> <small class="card-title">Present</small>
-                        </div>
-                        <div class="col-2">
-                         <small class="card-text text-end">31</small>
-                        </div>
-                        </div>
-
+                <table id="myTable" class="table table-striped">
+                    <thead>
+                        <tr>
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                        <th>Email</th>
+                     
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <?php foreach ($list as $row) { ?>
+                        <tr>
+                            <td><?php echo $row['first_name']; ?></td>
+                            <td><?php echo $row['last_name']; ?></td>
+                            <td><?php echo $row['email']; ?></td>
+                       
+                        </tr>
+                    <?php } ?>
+                    </tbody>
+                    </table>
                     </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-3 mb-3 mb-sm-0 ">
-                <div class="card border-0 border-bottom  border-danger border-5 shadow">
-                <div class="card-body">
-                <div class="row">
-                            <div class="col-10">
-                    <i class="fa-solid fa-circle-info text-danger fs-4 me-2"></i> <small class="card-title">Absent</small>
-                        </div>
-                        <div class="col-2">
-                         <small class="card-text text-end">31</small>
-                        </div>
-                        </div>
-                </div>
-                </div>
-            </div>
-
-    
-
-        <div class="col-sm-3 mb-3 mb-sm-0">
-                    <div class="card border-0 border-bottom  border-primary border-5 shadow">
-                    <div class="card-body">
-                    <div class="row">
-                            <div class="col-10">
-                    <i class="fa-solid fa-circle-info text-primary fs-4 me-2"></i> <small class="card-title">Employee</small>
-                        </div>
-                        <div class="col-2">
-                         <small class="card-text text-end"><?php echo $employeeCount; ?></small>
-                        </div>
-                        </div>
-
-                    </div>
-                    </div>
-                </div>
-
-
-                <div class="col-sm-3 mb-3 mb-sm-0">
-            <div class="card border-0 border-bottom  border-secondary border-5 shadow">
-            <div class="card-body">
-            <div class="row">
-                            <div class="col-10">
-                    <i class="fa-solid fa-circle-info text-secondary fs-4 me-2"></i> <small class="card-title">Pending Applicants</small>
-                        </div>
-                        <div class="col-2">
-                         <small class="card-text text-end">31</small>
-                        </div>
-                        </div>
-            
-            </div>
-            </div>
-        </div>
-
-
-
-                </div>
-            </div>
-
-           
         </div>
     </div>
 </div>

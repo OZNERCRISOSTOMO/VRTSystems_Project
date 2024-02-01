@@ -49,7 +49,12 @@ if(isset($_SESSION['id']) && $_SESSION['user_type'] === 3){
                         <i class="fa-solid fa-clipboard-user"></i></i> <span class="ms-1 d-none d-sm-inline">Attendance</span></a>
                     </li>
               
-                
+                    <li>
+                        <a href="../Pages/employeelist.php" class="nav-link px-0 align-middle text-black">
+                        <i class="fa-solid fa-user"></i></i> <span class="ms-1 d-none d-sm-inline">Employee List</span> </a>
+                    </li>
+
+
                     <li>
                         <a href="../Pages/admin_pending_applicants.php" class="nav-link px-0 align-middle text-black">
                         <i class="fa-solid fa-clock-rotate-left"></i></i> <span class="ms-1 d-none d-sm-inline">Pending Applicants</span> </a>

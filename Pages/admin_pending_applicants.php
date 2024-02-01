@@ -14,7 +14,10 @@ if(isset($_SESSION['id']) && $_SESSION['user_type'] === 3){
 }else{
   header('Location: login.php');
 }
+
+$list = $database->getConnection()->query("SELECT * FROM employee_info WHERE status=0")->fetchAll();
 ?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -56,7 +59,12 @@ if(isset($_SESSION['id']) && $_SESSION['user_type'] === 3){
                         <i class="fa-solid fa-clipboard-user"></i></i> <span class="ms-1 d-none d-sm-inline">Attendance</span></a>
                     </li>
               
-                
+                    <li>
+                        <a href="../Pages/employeelist.php" class="nav-link px-0 align-middle text-black">
+                        <i class="fa-solid fa-user"></i></i> <span class="ms-1 d-none d-sm-inline">Employee List</span> </a>
+                    </li>
+
+
                     <li>
                         <a href="../Pages/admin_pending_applicants.php" class="nav-link px-0 align-middle text-black">
                         <i class="fa-solid fa-clock-rotate-left"></i></i> <span class="ms-1 d-none d-sm-inline">Pending Applicants</span> </a>
@@ -91,35 +99,49 @@ if(isset($_SESSION['id']) && $_SESSION['user_type'] === 3){
                         <th>Lastname</th>
                         <th>Email</th>
                         <th>Status</th>
+                        <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
+
+                    <?php foreach ($list as $row) { 
+                      
+                      
+                      if ($row['status'] == 0)
+                      {
+                          $status = '<span class="badge text-bg-secondary">Pending</span>';
+                      }
+                      elseif ($row['status'] == 1)
+                      {
+                          $status = '<span class="badge text-bg-success">Approved</span>';
+                      }
+                      elseif ($row['status'] == 2)
+                      {
+                          $status = '<span class="badge text-bg-danger">Declined</span>';
+                      }
+                    
+                      ?>
+                    
                         <tr>
-                        <td>Jerome</td>
-                        <td>Chua</td>
-                        <td>Jerome@gmail.com</td>
+                        <td><?php echo $row['first_name']; ?></td>
+                        <td><?php echo $row['last_name']; ?></td>
+                        <td><?php echo $row['email']; ?></td>
+                        <td><?php echo $status ?></td>
                         <td>
-                        <div class="d-grid gap-2 d-md-block">
-                    <button id="accept-button" class="btn btn-primary btn-sm " type="button">Accept</button>
-                    <button id="decline-button" class="btn btn-danger btn-sm" type="button">Decline</button>
-                    </div>
+                        <div class="d-flex gap-2 ">
+                          <form method="POST" action="../functions/accept.php">
+                            <input type="hidden" name="accept_id" value="<?php echo $row['id'] ?>">
+                    <button type="submit" id="accept-button" class="btn btn-primary btn-sm ">Accept</button>
+                        </form>
+                        <form method="POST" action="../functions/declined.php">
+                        <input type="hidden" name="decline_id" value="<?php echo $row['id'] ?>">
+                    <button type="submit" id="decline-button" class="btn btn-danger btn-sm" >Decline</button>
+                    </form>
+                  </div>
 
                         </td>
                         </tr>
-                        <tr>
-                        <td>Dange, Kevin</td>
-                        <td>12:30 AM</td>
-                        <td>12:30 AM</td>
-                        <td>
-
-                        <div class="d-grid gap-2 d-md-block">
-                            <button class="btn btn-primary btn-sm accept-button" type="button">Accept</button>
-                            <button class="btn btn-danger btn-sm decline-button" type="button">Decline</button>
-                            </div>
-
-
-                        </td>
-                        </tr>
+                      <?php };?>
                     </tbody>
                     </table>
 
