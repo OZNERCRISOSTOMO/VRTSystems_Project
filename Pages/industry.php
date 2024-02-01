@@ -1,6 +1,6 @@
 
 
-<DOCTYPE! Html>
+<!DOCTYPE Html>
 <html lang="en">
     <head>
      
