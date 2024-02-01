@@ -7,6 +7,7 @@
     <title>Sign Up</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/53a2b7f096.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../assets1/css/1.css" />
    <style>
     body{
         background-image: url('../Pictures/2314983.jpg');
@@ -22,7 +23,9 @@
   </head>
   <body>
 
+  <div class="loader">
 
+</div>
 
     <div class="container d-flex justify-content-center align-items-center vh-100">
 
@@ -78,6 +81,7 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="../assets1/js/1.js"></script>
     <script>
         function validateForm() {
             var firstName = document.forms["signupForm"]["f_name"].value;
