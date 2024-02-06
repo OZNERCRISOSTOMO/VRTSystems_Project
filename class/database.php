@@ -15,7 +15,7 @@ class Database
     private $dbPassword = "";
     private $connection;
 
-    public function __construct( ) {
+    public function __construct() {
         $this->connection = new PDO("mysql:host=$this->dbServername;dbname=vrtsystems", $this->dbUsername, $this->dbPassword);
 
        // set the PDO error mode to exception
